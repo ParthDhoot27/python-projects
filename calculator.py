@@ -12,7 +12,11 @@ def calculator(last_result) :
         calculator(last_result)
 
     #next num 
-    num = int(input("input second number: "))
+    try:
+        num = int(input("input second number: "))
+    except:
+        print("you mighthave entered wrong thing")
+        calculator(last_result)
 
     #identify and apply the operation 
     if(operation == "+"):
@@ -38,7 +42,9 @@ def calculator(last_result) :
 
 #start value
 #initially before the operations the first value is also the last result 
-last_result = int(input("input first number: "))
-
-#calling the calculator function 
-calculator(last_result)
+try:
+    last_result = int(input("input first number: "))
+    #calling the calculator function
+    calculator(last_result)
+except:
+    print("you mighthave entered wrong thing")
